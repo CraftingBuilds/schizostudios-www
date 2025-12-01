@@ -1,0 +1,47 @@
+/* ==========================================================
+   SCHIZO STUDIOS -- CORE BRAND CSS
+   Palette from the first uploaded image (Blue / Gold / White / Black)
+   ========================================================== */
+
+:root {
+    --schizo-blue:   #253A71;
+    --schizo-gold:   #9F7C42;
+    --schizo-white:  #FFFFFF;
+    --schizo-black:  #000000;
+
+    /* Supporting neutrals */
+    --schizo-text-light: #F7F7F7;
+    --schizo-text-dark:  #0A0D16;
+}
+
+/* -------- Background Utilities -------- */
+.bg-schizo-blue  { background-color: var(--schizo-blue); }
+.bg-schizo-gold  { background-color: var(--schizo-gold); }
+.bg-schizo-white { background-color: var(--schizo-white); }
+.bg-schizo-black { background-color: var(--schizo-black); }
+
+/* -------- Text Utilities -------- */
+.text-schizo-blue  { color: var(--schizo-blue); }
+.text-schizo-gold  { color: var(--schizo-gold); }
+.text-schizo-white { color: var(--schizo-white); }
+.text-schizo-black { color: var(--schizo-black); }
+
+/* -------- Border Utilities -------- */
+.border-schizo-blue  { border: 2px solid var(--schizo-blue); }
+.border-schizo-gold  { border: 2px solid var(--schizo-gold); }
+.border-schizo-white { border: 2px solid var(--schizo-white); }
+.border-schizo-black { border: 2px solid var(--schizo-black); }
+
+/* -------- Stripe Pattern (Blue → Gold → White → Black) -------- */
+.schizo-stripes {
+    background: linear-gradient(to right,
+        var(--schizo-blue) 0%,
+        var(--schizo-blue) 25%,
+        var(--schizo-gold) 25%,
+        var(--schizo-gold) 50%,
+        var(--schizo-white) 50%,
+        var(--schizo-white) 75%,
+        var(--schizo-black) 75%,
+        var(--schizo-black) 100%
+    );
+}

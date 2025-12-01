@@ -1,0 +1,55 @@
+/* ==========================================================
+   HELPING SPIRITS DIVISION -- CSS THEME
+   Palette from second image (Black / Gray-Green / Olive-Brown / Sand / Navy)
+   ========================================================== */
+
+:root {
+    --spirits-black:        #000000;
+    --spirits-gray:         #53544C;
+    --spirits-olive:        #917F5B;
+    --spirits-sand:         #C9BC8F;
+    --spirits-navy:         #27334A;
+
+    /* Stripe-adjusted variants */
+    --spirits-olive-alt:    #8C7B57;
+    --spirits-gray-alt:     #54544E;
+
+    /* Text */
+    --spirits-text-light: #F7F7F7;
+    --spirits-text-dark:  #0A0D16;
+}
+
+/* -------- Background Utilities -------- */
+.bg-spirits-black { background-color: var(--spirits-black); }
+.bg-spirits-gray  { background-color: var(--spirits-gray); }
+.bg-spirits-olive { background-color: var(--spirits-olive); }
+.bg-spirits-sand  { background-color: var(--spirits-sand); }
+.bg-spirits-navy  { background-color: var(--spirits-navy); }
+
+/* -------- Text Utilities -------- */
+.text-spirits-black { color: var(--spirits-black); }
+.text-spirits-gray  { color: var(--spirits-gray); }
+.text-spirits-olive { color: var(--spirits-olive); }
+.text-spirits-sand  { color: var(--spirits-sand); }
+.text-spirits-navy  { color: var(--spirits-navy); }
+
+/* -------- Border Utilities -------- */
+.border-spirits-black { border: 2px solid var(--spirits-black); }
+.border-spirits-gray  { border: 2px solid var(--spirits-gray); }
+.border-spirits-olive { border: 2px solid var(--spirits-olive); }
+.border-spirits-sand  { border: 2px solid var(--spirits-sand); }
+.border-spirits-navy  { border: 2px solid var(--spirits-navy); }
+
+/* -------- Stripe Pattern (Navy → Sand → Olive → Gray) -------- */
+.spirits-stripes {
+    background: linear-gradient(to right,
+        var(--spirits-navy) 0%,
+        var(--spirits-navy) 25%,
+        var(--spirits-sand) 25%,
+        var(--spirits-sand) 50%,
+        var(--spirits-olive-alt) 50%,
+        var(--spirits-olive-alt) 75%,
+        var(--spirits-gray-alt) 75%,
+        var(--spirits-gray-alt) 100%
+    );
+}
