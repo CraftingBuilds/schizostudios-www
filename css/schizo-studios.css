@@ -43,5 +43,20 @@
         var(--schizo-white) 75%,
         var(--schizo-black) 75%,
         var(--schizo-black) 100%
+        
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Serif+Pro:wght@300;400;600&family=JetBrains+Mono:wght@300;400;600&display=swap');
+
+:root {
+    --font-display-schizo: 'Poppins', sans-serif;
+    --font-body-schizo: 'Source Serif Pro', serif;
+    --font-mono-schizo: 'JetBrains Mono', monospace;
+}
+
+/* Usage */
+.schizo-display { font-family: var(--font-display-schizo); }
+.schizo-body    { font-family: var(--font-body-schizo); }
+.schizo-mono    { font-family: var(--font-mono-schizo); }
     );
 }
