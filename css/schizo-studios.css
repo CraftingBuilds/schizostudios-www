@@ -1,6 +1,5 @@
 /* ==========================================================
    SCHIZO STUDIOS -- CORE BRAND CSS
-   Palette from the first uploaded image (Blue / Gold / White / Black)
    ========================================================== */
 
 :root {
@@ -9,30 +8,36 @@
     --schizo-white:  #FFFFFF;
     --schizo-black:  #000000;
 
-    /* Supporting neutrals */
     --schizo-text-light: #F7F7F7;
     --schizo-text-dark:  #0A0D16;
+
+    --font-display-schizo: 'Poppins', sans-serif;
+    --font-body-schizo:    'Source Serif Pro', serif;
+    --font-mono-schizo:    'JetBrains Mono', monospace;
 }
 
-/* -------- Background Utilities -------- */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Serif+Pro:wght@300;400;600&family=JetBrains+Mono:wght@300;400;600&display=swap');
+
+/* Background Utility */
 .bg-schizo-blue  { background-color: var(--schizo-blue); }
 .bg-schizo-gold  { background-color: var(--schizo-gold); }
 .bg-schizo-white { background-color: var(--schizo-white); }
 .bg-schizo-black { background-color: var(--schizo-black); }
 
-/* -------- Text Utilities -------- */
+/* Text Utility */
 .text-schizo-blue  { color: var(--schizo-blue); }
 .text-schizo-gold  { color: var(--schizo-gold); }
 .text-schizo-white { color: var(--schizo-white); }
 .text-schizo-black { color: var(--schizo-black); }
 
-/* -------- Border Utilities -------- */
+/* Border Utility */
 .border-schizo-blue  { border: 2px solid var(--schizo-blue); }
 .border-schizo-gold  { border: 2px solid var(--schizo-gold); }
 .border-schizo-white { border: 2px solid var(--schizo-white); }
 .border-schizo-black { border: 2px solid var(--schizo-black); }
 
-/* -------- Stripe Pattern (Blue → Gold → White → Black) -------- */
+/* Stripe Pattern */
 .schizo-stripes {
     background: linear-gradient(to right,
         var(--schizo-blue) 0%,
@@ -43,20 +48,70 @@
         var(--schizo-white) 75%,
         var(--schizo-black) 75%,
         var(--schizo-black) 100%
-        
-
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Serif+Pro:wght@300;400;600&family=JetBrains+Mono:wght@300;400;600&display=swap');
-
-:root {
-    --font-display-schizo: 'Poppins', sans-serif;
-    --font-body-schizo: 'Source Serif Pro', serif;
-    --font-mono-schizo: 'JetBrains Mono', monospace;
+    );
 }
 
-/* Usage */
+/* Typography Helpers */
 .schizo-display { font-family: var(--font-display-schizo); }
 .schizo-body    { font-family: var(--font-body-schizo); }
 .schizo-mono    { font-family: var(--font-mono-schizo); }
-    );
+
+/* Site Layout Core */
+body {
+    background: #0a0d16;
+    color: var(--schizo-text-light);
+    margin: 0;
+    font-family: var(--font-body-schizo);
+}
+
+header {
+    background: rgba(10, 13, 22, 0.9);
+    border-bottom: 1px solid var(--schizo-blue);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav a {
+    color: var(--schizo-gold);
+    font-weight: bold;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--schizo-white);
+    text-shadow: 0 0 8px var(--schizo-gold);
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(#0a0d16, #1b2238);
+}
+
+.section {
+    padding: 60px 40px;
+    border-bottom: 1px solid var(--schizo-blue);
+}
+
+.division-card {
+    background: #11172b;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--schizo-blue);
+    margin-bottom: 15px;
+}
+
+.division-card:hover {
+    background: #1b2238;
+}
+
+footer {
+    padding: 40px;
+    border-top: 1px solid var(--schizo-blue);
+    text-align: center;
 }
