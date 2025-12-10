@@ -1,26 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soon to Come...</title>
+
     <style>
         body {
             margin: 0;
-            padding: 0;
             background: #000;
             color: #fff;
-            font-family: Arial, sans-serif;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* NAV CONTAINER — stays at the top */
+        #nav-placeholder {
+            width: 100%;
+        }
+
+        /* MAIN CONTENT — centers only this section */
+        main {
+            flex: 1; /* takes remaining space between nav and footer */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            font-size: 2rem;
+            text-align: center;
             letter-spacing: 2px;
+        }
+
+        footer {
+            padding: 1.5rem 0;
+            text-align: center;
+            font-family: sans-serif;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            color: #fff;
         }
     </style>
 </head>
+
 <body>
-    Soon to Come...
+
+    <!-- SITEWIDE NAV -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <div id="nav-placeholder"></div>
+    <script src="/js/nav-loader.js"></script>
+
+    <!-- CENTERED PAGE CONTENT ONLY -->
+    <main>
+        <h1>Soon to Come...</h1>
+    </main>
+
+    <!-- SITEWIDE FOOTER -->
+    <footer>
+        <div style="margin-bottom: 0.75rem;">
+            <a href="/docs/Privacy_Policy_rev11-2025.pdf">Privacy Policy</a>
+            |
+            <a href="/docs/Terms_of_Service_rev11-2025.pdf">Terms of Service</a>
+        </div>
+
+        © 2025 Mikah Smith &amp; Schizo Studios - All Rights Reserved
+    </footer>
+
 </body>
 </html>

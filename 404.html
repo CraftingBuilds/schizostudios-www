@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 — Schizo Studios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0f1526;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Center wrapper */
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 5rem;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      max-width: 600px;
+      opacity: 0.85;
+    }
+
+    .home-btn {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #1F3B76;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .home-btn:hover {
+      background: #274890;
+      transform: scale(1.05);
+    }
+
+    /* LightCraft-esque background rings */
+    .rings {
+      position: absolute;
+      width: 120vmax;
+      height: 120vmax;
+      border: 2px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse 12s infinite linear;
+    }
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      100% { transform: translate(-50%, -50%) scale(1.3); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      opacity: 0.5;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<link rel="stylesheet" href="/css/nav.css">
+<div id="nav-placeholder"></div>
+<script src="/js/nav-loader.js"></script>
+
+<div class="rings"></div>
+
+<div class="content">
+  <h1>404</h1>
+  <p>
+    This page wandered off into the void.  
+    The link you followed doesn’t exist… or maybe it ascended.
+  </p>
+
+  <a href="/" class="home-btn">Return Home</a>
+</div>
+
+<footer>
+  © 2025 Mikah Smith &  Schizo Studios — All Rights Reserved
+</footer>
+
+</body>
+</html>
