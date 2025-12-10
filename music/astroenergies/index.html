@@ -1,1 +1,99 @@
-<html><body><h1>AstroEnergies</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>astroenergies – Sound of the Stars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/astroenergies.css" />
+</head>
+<body>
+  <header class="ae-header">
+    <div class="ae-header-inner">
+      <img src="img/astroenergies-logo.png" alt="astroenergies logo" class="ae-logo" />
+      <div class="ae-titleblock">
+        <h1>astroenergies</h1>
+        <p>frequency-coded, star-driven soundcraft</p>
+      </div>
+      <nav class="ae-nav">
+        <a href="#player">Player</a>
+        <a href="#discovery">Discovery</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / sticker vibe -->
+    <section class="ae-hero">
+      <div class="ae-sticker">
+        <div class="ae-sticker-inner">
+          <h2>energy from the sky, encoded in sound</h2>
+          <p>
+            astroenergies is the portal for ritual soundscapes, protection chants,
+            and encoded rhythms tuned to the current sky.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local media player -->
+    <section id="player" class="ae-section">
+      <h2>Studio Player</h2>
+      <p class="ae-section-intro">
+        Stream mastered files stored on this server – new astroenergies
+        releases from here on out live in this player.
+      </p>
+
+      <div class="ae-player">
+        <div class="ae-now-playing">
+          <span class="label">Now playing:</span>
+          <span id="ae-now-title">--</span>
+        </div>
+
+        <audio id="ae-audio" controls preload="metadata">
+          Your browser does not support the audio element.
+        </audio>
+
+        <ul id="ae-playlist" class="ae-playlist"></ul>
+      </div>
+    </section>
+
+    <!-- Dynamic discovery -->
+    <section id="discovery" class="ae-section">
+      <h2>Discovery: Complete astroenergies Catalog</h2>
+      <p class="ae-section-intro">
+        This feed pulls every astroenergies track found on Apple Music
+        and merges both artist profiles. As you release new songs, this
+        section updates automatically when the backend script runs.
+      </p>
+
+      <div id="ae-discography" class="ae-grid"></div>
+    </section>
+
+    <!-- About / links -->
+    <section id="about" class="ae-section ae-section-about">
+      <h2>About astroenergies</h2>
+      <p>
+        astroenergies is a music production project weaving astrology,
+        numerology, and ritual sound design into tracks built for deep
+        listening, spell-work, and trance.
+      </p>
+
+      <div class="ae-links">
+        <a class="ae-button" href="https://music.apple.com/us/artist/astroenergies/1832538332" target="_blank" rel="noopener">
+          Apple Music Artist Page ①
+        </a>
+        <a class="ae-button" href="https://music.apple.com/us/artist/astroenergies/1831765259" target="_blank" rel="noopener">
+          Apple Music Artist Page ②
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ae-footer">
+    <p>© <span id="ae-year"></span> astroenergies · crafted under the stars</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
