@@ -1,0 +1,287 @@
+/* ==========================================================
+   SOUNDCRAFT -- METAPHYSICAL SOUND ALCHEMY
+   Brand CSS derived from the SoundCraft sigil
+   ========================================================== */
+
+:root {
+    /* Core palette from the medallion */
+    --soundcraft-space:   #0A0D16; /* deep cosmic background */
+    --soundcraft-violet:  #4B4056; /* inner ring shadow */
+    --soundcraft-rose:    #8A5B61; /* warm rose-bronze */
+    --soundcraft-bronze:  #947750; /* outer ring bronze */
+    --soundcraft-gold:    #D3B18B; /* highlight gold */
+    --soundcraft-cream:   #F4E7D7; /* soft light for text */
+    --soundcraft-glow:    #CBB095; /* center crystal glow */
+
+    --soundcraft-text-main:   #F7F4F0;
+    --soundcraft-text-muted:  #C1B6AF;
+
+    --soundcraft-radius-soft: 12px;
+    --soundcraft-radius-pill: 999px;
+
+    --soundcraft-shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
+    --soundcraft-shadow-glow: 0 0 25px rgba(203, 176, 149, 0.55);
+}
+
+/* -------- Base layout & typography -------- */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top,
+                #1C1526 0%,
+                var(--soundcraft-space) 38%,
+                #05060A 100%);
+    color: var(--soundcraft-text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+/* Headings tuned to the seal */
+
+h1, h2, h3 {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 0.75em;
+}
+
+h1 {
+    color: var(--soundcraft-gold);
+    font-size: 2.4rem;
+    text-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+    color: var(--soundcraft-rose);
+    font-size: 1.6rem;
+}
+
+h3 {
+    color: var(--soundcraft-cream);
+    font-size: 1.25rem;
+}
+
+/* Paragraphs / subtle emphasis */
+
+p {
+    margin: 0 0 1rem;
+    color: var(--soundcraft-text-main);
+}
+
+.small-text {
+    font-size: 0.875rem;
+    color: var(--soundcraft-text-muted);
+}
+
+/* -------- Utility classes -------- */
+
+/* Backgrounds */
+
+.bg-soundcraft-space  { background-color: var(--soundcraft-space); }
+.bg-soundcraft-violet { background-color: var(--soundcraft-violet); }
+.bg-soundcraft-rose   { background-color: var(--soundcraft-rose); }
+.bg-soundcraft-bronze { background-color: var(--soundcraft-bronze); }
+.bg-soundcraft-gold   { background-color: var(--soundcraft-gold); }
+
+/* Text colors */
+
+.text-soundcraft-gold   { color: var(--soundcraft-gold); }
+.text-soundcraft-bronze { color: var(--soundcraft-bronze); }
+.text-soundcraft-rose   { color: var(--soundcraft-rose); }
+.text-soundcraft-cream  { color: var(--soundcraft-cream); }
+.text-soundcraft-muted  { color: var(--soundcraft-text-muted); }
+
+/* Layout helpers */
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    padding: 3rem 1.5rem;
+}
+
+.section-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* -------- Signature components -------- */
+
+/* Top banner similar to Schizo/Helping Spirits headers */
+
+.soundcraft-header {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(211, 177, 139, 0.25);
+    background:
+        radial-gradient(circle at top,
+            rgba(211, 177, 139, 0.25) 0%,
+            transparent 55%)
+        ,
+        linear-gradient(90deg,
+            rgba(75, 64, 86, 0.95),
+            rgba(10, 13, 22, 0.98));
+    box-shadow: var(--soundcraft-shadow-soft);
+}
+
+.soundcraft-header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.soundcraft-logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    box-shadow: var(--soundcraft-shadow-glow);
+}
+
+.soundcraft-title-block h1 {
+    text-align: left;
+}
+
+.soundcraft-tagline {
+    font-style: italic;
+    color: var(--soundcraft-text-muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+/* Card container styled like the medallion rim */
+
+.soundcraft-card {
+    background:
+        radial-gradient(circle at top,
+            rgba(203, 176, 149, 0.16) 0%,
+            rgba(10, 13, 22, 0.96) 55%),
+        linear-gradient(145deg,
+            rgba(75, 64, 86, 0.95),
+            rgba(10, 13, 22, 0.98));
+    border-radius: var(--soundcraft-radius-soft);
+    border: 1px solid rgba(211, 177, 139, 0.45);
+    box-shadow: var(--soundcraft-shadow-soft);
+    padding: 1.75rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Faint geometric overlay */
+
+.soundcraft-card::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background-image:
+        radial-gradient(circle at center,
+            rgba(203, 176, 149, 0.18) 0,
+            transparent 52%),
+        radial-gradient(circle at 20% 20%,
+            rgba(148, 119, 80, 0.22) 0,
+            transparent 46%),
+        radial-gradient(circle at 80% 80%,
+            rgba(75, 64, 86, 0.50) 0,
+            transparent 55%);
+    opacity: 0.65;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+/* Waveform divider inspired by the seal */
+
+.soundcraft-wave-divider {
+    height: 2px;
+    margin: 1.75rem 0;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(211, 177, 139, 0.05) 5%,
+        rgba(211, 177, 139, 0.55) 20%,
+        rgba(211, 177, 139, 0.85) 50%,
+        rgba(211, 177, 139, 0.55) 80%,
+        rgba(211, 177, 139, 0.05) 95%,
+        transparent 100%);
+    box-shadow: 0 0 15px rgba(203, 176, 149, 0.6);
+}
+
+/* -------- Buttons -------- */
+
+.btn-soundcraft {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.6rem;
+    border-radius: var(--soundcraft-radius-pill);
+    border: 1px solid rgba(211, 177, 139, 0.7);
+    background: radial-gradient(circle at top,
+                rgba(203, 176, 149, 0.5) 0%,
+                rgba(148, 119, 80, 0.05) 55%,
+                rgba(10, 13, 22, 0.95) 100%);
+    color: var(--soundcraft-cream);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: var(--soundcraft-shadow-glow);
+    transition: transform 0.15s ease-out,
+                box-shadow 0.15s ease-out,
+                background 0.15s ease-out;
+}
+
+.btn-soundcraft:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 30px rgba(203, 176, 149, 0.8);
+    background: radial-gradient(circle at top,
+                rgba(203, 176, 149, 0.75) 0%,
+                rgba(148, 119, 80, 0.2) 55%,
+                rgba(10, 13, 22, 0.95) 100%);
+}
+
+.btn-soundcraft:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 0 18px rgba(203, 176, 149, 0.6);
+}
+
+/* Subtle pill tags for frequencies, modes, etc. */
+
+.soundcraft-pill {
+    display: inline-block;
+    padding: 0.25rem 0.9rem;
+    border-radius: var(--soundcraft-radius-pill);
+    border: 1px solid rgba(211, 177, 139, 0.45);
+    background: rgba(10, 13, 22, 0.9);
+    color: var(--soundcraft-text-muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* -------- Audio / player container -------- */
+
+.soundcraft-player {
+    margin-top: 1.25rem;
+    padding: 0.8rem 1rem;
+    border-radius: var(--soundcraft-radius-soft);
+    border: 1px solid rgba(148, 119, 80, 0.65);
+    background: linear-gradient(135deg,
+        rgba(10, 13, 22, 0.95),
+        rgba(75, 64, 86, 0.95));
+    box-shadow: var(--soundcraft-shadow-soft);
+}
+
+/* -------- Footer band -------- */
+
+.soundcraft-footer {
+    border-top: 1px solid rgba(211, 177, 139, 0.2);
+    padding: 1.5rem 1rem 2rem;
+    font-size: 0.8rem;
+    color: var(--soundcraft-text-muted);
+    text-align: center;
+}
