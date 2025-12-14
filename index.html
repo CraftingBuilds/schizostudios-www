@@ -21,14 +21,28 @@
             width: 100%;
         }
 
-        /* MAIN CONTENT — centers only this section */
+        /* MAIN CONTENT — normal readable layout */
         main {
-            flex: 1; /* takes remaining space between nav and footer */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            letter-spacing: 2px;
+            flex: 1;
+            max-width: 900px;
+            margin: 4rem auto 2rem auto;
+            padding: 0 1rem;
+            text-align: left;
+            letter-spacing: 0.5px; /* readable, not stretched */
+        }
+
+        /* Headings */
+        main h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Paragraphs */
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         footer {
