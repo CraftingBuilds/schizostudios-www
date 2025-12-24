@@ -1,1 +1,328 @@
-<html><body><h1>Music Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music · Artists · Schizo Studios</title>
+
+  <!-- SITEWIDE NAV CSS -->
+  <link rel="stylesheet" href="/css/nav.css" />
+
+  <style>
+    :root{
+      --bg:#000;
+      --fg:#fff;
+      --muted:#bdbdbd;
+      --border: rgba(255,255,255,.16);
+      --panel: rgba(255,255,255,.04);
+      --panel2: rgba(255,255,255,.06);
+    }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    #nav-placeholder{ width:100%; }
+
+    main{
+      flex:1;
+      max-width: 980px;
+      width: 100%;
+      margin: 2.25rem auto 2rem auto;
+      padding: 0 1rem;
+      text-align:left;           /* <-- keep it readable */
+      letter-spacing:.3px;
+    }
+
+    header h1{
+      margin: 0 0 .35rem 0;
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+    header p{
+      margin: 0 0 1.25rem 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ====== CAROUSEL ====== */
+    .carousel-wrap{
+      border:1px solid var(--border);
+      border-radius: 18px;
+      background: var(--panel);
+      padding: 1rem;
+    }
+
+    .carousel{
+      display:flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .carousel button{
+      appearance:none;
+      border:1px solid var(--border);
+      background: var(--panel2);
+      color: var(--fg);
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .carousel button:hover{ border-color: rgba(255,255,255,.35); }
+
+    .slide{
+      flex:1;
+      min-height: 160px;
+      border:1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(0,0,0,.25);
+      padding: 1rem 1.1rem;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:.35rem;
+    }
+
+    .artist-name{
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin:0;
+    }
+
+    .artist-meta{
+      margin:0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .artist-link{
+      display:inline-block;
+      margin-top:.4rem;
+      color: var(--fg);
+      text-decoration:none;
+      border-bottom: 1px solid rgba(255,255,255,.35);
+      width: fit-content;
+      padding-bottom: 2px;
+    }
+    .artist-link:hover{ border-bottom-color:#fff; }
+
+    .dots{
+      display:flex;
+      gap:.4rem;
+      justify-content:center;
+      margin-top:.85rem;
+    }
+    .dot{
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: transparent;
+      cursor:pointer;
+    }
+    .dot.active{
+      background: rgba(255,255,255,.75);
+      border-color: rgba(255,255,255,.75);
+    }
+
+    /* ====== JOIN SECTION (centered, NOT a square card) ====== */
+    .join{
+      margin-top: 1.25rem;
+      text-align:center; /* only this section centered */
+      padding: 1.1rem 1rem;
+    }
+    .join h2{
+      margin:0 0 .35rem 0;
+      font-size: 1.35rem;
+      font-weight: 850;
+    }
+    .join p{
+      margin:0 0 .8rem 0;
+      color: var(--muted);
+      line-height:1.5;
+    }
+    .join a{
+      display:inline-block;
+      padding: .7rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.35);
+      color: var(--fg);
+      text-decoration:none;
+      background: rgba(255,255,255,.06);
+    }
+    .join a:hover{
+      border-color:#fff;
+      background: rgba(255,255,255,.10);
+    }
+
+    footer{
+      padding: 1.5rem 0;
+      text-align:center;
+      color:#aaa;
+      font-size:.95rem;
+    }
+    footer a{
+      color:#ccc;
+      text-decoration:none;
+      margin:0 .5rem;
+    }
+    footer a:hover{ color:#fff; }
+  </style>
+
+  <!-- Load your normal nav loader, but don't trust timing -->
+  <script src="/js/nav-loader.js" defer></script>
+</head>
+
+<body>
+  <!-- MUST be in body -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <header>
+      <h1>Schizo Studios · Sound Artists</h1>
+      <p>Musicians and sound creators operating under the Schizo Studios banner.</p>
+    </header>
+
+    <section class="carousel-wrap" aria-label="Artists carousel">
+      <div class="carousel">
+        <button id="prevBtn" aria-label="Previous artist">‹</button>
+
+        <div class="slide" id="slide" role="group" aria-roledescription="slide">
+          <!-- populated by JS -->
+        </div>
+
+        <button id="nextBtn" aria-label="Next artist">›</button>
+      </div>
+
+      <div class="dots" id="dots" aria-label="Carousel navigation">
+        <!-- dots injected -->
+      </div>
+    </section>
+
+    <section class="join" aria-label="Join Schizo Studios music roster">
+      <h2>Join the roster</h2>
+      <p>If you’re building sound, music, or audio experiences and want to fly the Schizo Studios flag—apply.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSchoyYeYbIsWZdGUF94JUcuSKuc3C5NLybeAHx43NJZkIL4Kg/viewform?usp=sharing&ouid=100370133287399707934">
+        Submit the form
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div style="margin-bottom:0.75rem;">
+      <a href="/docs/Privacy_Policy_rev11-2025.pdf">Privacy Policy</a>
+      |
+      <a href="/docs/Terms_of_Service_rev11-2025.pdf">Terms of Service</a>
+    </div>
+    © 2025 Mikah Smith &amp; Schizo Studios - All Rights Reserved
+  </footer>
+
+  <script>
+    // ====== Artists carousel data ======
+    // Add/edit artists here. Last one is the "This could be you!" slide.
+    const artists = [
+      {
+        name: "astroenergies",
+        meta: "Electronic / metaphysical soundcraft",
+        href: "/music/astroenergies/"
+      },
+      {
+        name: "This could be you!",
+        meta: "Your name here — submit the form below to join the roster.",
+        href: null
+      }
+    ];
+
+    // ====== Carousel logic ======
+    const slideEl = document.getElementById("slide");
+    const dotsEl = document.getElementById("dots");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    let i = 0;
+
+    function renderDots(){
+      dotsEl.innerHTML = "";
+      artists.forEach((_, idx) => {
+        const b = document.createElement("button");
+        b.className = "dot" + (idx === i ? " active" : "");
+        b.setAttribute("aria-label", "Go to slide " + (idx + 1));
+        b.addEventListener("click", () => { i = idx; render(); });
+        dotsEl.appendChild(b);
+      });
+    }
+
+    function render(){
+      const a = artists[i];
+      slideEl.innerHTML = `
+        <p class="artist-name">${a.name}</p>
+        <p class="artist-meta">${a.meta}</p>
+        ${a.href ? `<a class="artist-link" href="${a.href}">Open</a>` : ``}
+      `;
+      [...dotsEl.children].forEach((d, idx) => {
+        d.classList.toggle("active", idx === i);
+      });
+    }
+
+    prevBtn.addEventListener("click", () => {
+      i = (i - 1 + artists.length) % artists.length;
+      render();
+    });
+    nextBtn.addEventListener("click", () => {
+      i = (i + 1) % artists.length;
+      render();
+    });
+
+    // Keyboard support
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "ArrowRight") nextBtn.click();
+    });
+
+    renderDots();
+    render();
+
+    // ====== NAV FALLBACK (because your nav STILL isn't showing) ======
+    // If your /js/nav-loader.js fails, this tries common partial locations.
+    // Open DevTools console to see what path it loaded.
+    async function loadNavFallback(){
+      const mount = document.getElementById("nav-placeholder");
+      if (!mount) return;
+
+      // If nav-loader already populated it, do nothing.
+      if (mount.children.length > 0 && mount.textContent.trim().length > 0) return;
+
+      const candidates = [
+        "/partials/nav.html",
+        "/includes/nav.html",
+        "/nav.html"
+      ];
+
+      for (const url of candidates){
+        try{
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) continue;
+          const html = await res.text();
+          mount.innerHTML = html;
+          console.log("[nav] loaded fallback:", url);
+          return;
+        }catch(e){
+          // try next
+        }
+      }
+
+      console.warn("[nav] failed to load from candidates:", candidates);
+    }
+
+    window.addEventListener("DOMContentLoaded", loadNavFallback);
+  </script>
+</body>
+</html>
