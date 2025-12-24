@@ -1,40 +1,159 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soon to Come...</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* NAV CONTAINER — stays at the top */
+        #nav-placeholder {
+            width: 100%;
+        }
+
+        /* MAIN CONTENT — normal readable layout */
+        main {
+            flex: 1;
+            max-width: 900px;
+            margin: 4rem auto 2rem auto;
+            padding: 0 1rem;
+            text-align: left;
+            letter-spacing: 0.5px; /* readable, not stretched */
+        }
+
+        /* Headings */
+        main h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Paragraphs */
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            padding: 1.5rem 0;
+            text-align: center;
+            font-family: sans-serif;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+    </style>
+=======
 <html>
 <head>
   <title>Schizo Studios</title>
-  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/schizo-studios.css">
+
+  <!-- Helping Spirits global style (safe to load everywhere) -->
+  <link rel="stylesheet" href="css/helping-spirits.css">
+>>>>>>> 2d76621cf9d316bb3828509f5d99f6fc398b1ac9
 </head>
 
 <body>
 
+<<<<<<< HEAD
+    <!-- SITEWIDE NAV -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <div id="nav-placeholder"></div>
+    <script src="/js/nav-loader.js"></script>
+
+    <!-- CENTERED PAGE CONTENT ONLY -->
+    <main>
+        <h1>Schizo Studios Mission Statement</h1>
+        <p>Schizo Studios's mission is to bring indiviquals' outlook and opinions into the public.<br>
+        <br>
+        It is intended that through self expression one might gain better insight, all the while sharing their perspective and opinions with others.</p> 
+    </main>
+
+    <!-- SITEWIDE FOOTER -->
+    <footer>
+        <div style="margin-bottom: 0.75rem;">
+            <a href="/docs/Privacy_Policy_rev11-2025.pdf">Privacy Policy</a>
+            |
+            <a href="/docs/Terms_of_Service_rev11-2025.pdf">Terms of Service</a>
+        </div>
+
+        © 2025 Mikah Smith &amp; Schizo Studios - All Rights Reserved
+    </footer>
+
+</body>
+</html>
+=======
   <!-- Header with logo + text side by side -->
   <div class="studio-header">
     <img src="img/SchizoStudiosLogo.PNG" alt="Schizo Studios Logo" class="studio-logo">
 
     <div class="studio-text">
-      <h1>Schizo Studios</h1>
+      <h1 class="schizo-display text-schizo-gold">Schizo Studios</h1>
       <i>Scientia Aeterna, Scientia Omnibus</i>
       <p>Eternal knowledge, Knowledge for all</p>
     </div>
   </div>
 
+
+<!-- ======================= -->
+<!--   DIVISIONS SECTION     -->
+<!-- ======================= -->
+
 <section id="divisions">
-<h2>Divisions</h2>
+<h2 class="schizo-display text-schizo-gold">Divisions</h2>
 <ul>
-<li><a href="/hsd/">Helping Spirits Division</a></li>
-<li><a href="/astrology/">Astrology Division</a></li>
-<li><a href="/music/">Music Artists</a></li>
-<li><a href="/podcasts/">Podcasts</a></li>
-<li><a href="/notebooks/">Notebooks</a></li>
-<li><a href="/docs/">Docs</a></li>
+  <li><a href="/hsd/">Helping Spirits Division</a></li>
+  <li><a href="/astrology/">Astrology Division</a></li>
+  <li><a href="/music/">Music Artists</a></li>
+
+  <!-- Updated to use submodule instead of astroenergies.html -->
+  <li><a href="/music/astroenergies-www/index.html">Astroenergies (Submodule)</a></li>
+
+  <li><a href="/podcasts/">Podcasts</a></li>
+  <li><a href="/notebooks/">Notebooks</a></li>
+  <li><a href="/docs/">Docs</a></li>
 </ul>
 </section>
 
-<section id="crafts">
-  <h2>Schizo Studios Crafts</h2>
 
+
+<!-- ======================= -->
+<!--   CRAFTS SECTION        -->
+<!-- ======================= -->
+
+<section id="crafts">
+  <h2 class="schizo-display text-schizo-gold">Schizo Studios Crafts</h2>
+
+  <!-- LightCraft -->
   <h3>LightCraft</h3>
-  <p><strong>LightCraft</strong> is <em>"a practice involving light and esoteric mathematics and systems of knowledge to create trance-inducing and/or metaphysically beneficial video art"</em>.</p>
+  <p>
+    <strong>LightCraft</strong> is
+    <em>"a practice involving light and esoteric mathematics and systems of knowledge 
+    to create trance-inducing and/or metaphysically beneficial video art"</em>.
+  </p>
 
   <img src="img/LightCraftSeal.jpeg"
        alt="LightCraft Seal"
@@ -44,8 +163,14 @@
 
   <br>
 
+  <!-- SoundCraft -->
   <h3>SoundCraft</h3>
-  <p><strong>SoundCraft</strong> is <i>"a metaphysical practice that uses sound, frequencies, and intentional audio design to generate energetic healing, resonance, and spiritual modulation. It focuses on shaping the listener's inner state through vibration, rhythm, and harmonic structure rather than hypnosis"</i>.</p>
+  <p>
+    <strong>SoundCraft</strong> is 
+    <i>"a metaphysical practice that uses sound, frequencies, and intentional audio design 
+    to generate energetic healing, resonance, and spiritual modulation. It focuses on shaping 
+    the listener's inner state through vibration, rhythm, and harmonic structure rather than hypnosis"</i>.
+  </p>
 
   <img src="img/SoundCraftSeal.png"
        alt="SoundCraft Seal"
@@ -55,13 +180,23 @@
 </section>
 
 
+
+<!-- ======================= -->
+<!--        FOOTER           -->
+<!-- ======================= -->
+
 <footer>
 <img src="img/SchizoStudiosSeal.png" alt="Seal" style="width:150px;">
-<p>© 2025 Mikah Smith, Anonymous Schizophrenic, and Schizo Studios<br>
-℗ 2025 Mikah Smith, astroenergies, Anonymous Schizophrenic, and Schizo Studios</p>
-<p><a href="docs/Privacy_Policy_rev11-2025.pdf">Privacy Policy</a></p><br>
+<p>
+  © 2025 Mikah Smith, Anonymous Schizophrenic, and Schizo Studios<br>
+  ℗ 2025 Mikah Smith, astroenergies, Anonymous Schizophrenic, and Schizo Studios
+</p>
+
+<p><a href="docs/Privacy_Policy_rev11-2025.pdf">Privacy Policy</a></p>
+<br>
 <p><a href="docs/Terms_of_Service_rev11-2025.pdf">Terms of Service</a></p>
 </footer>
 
 </body>
 </html>
+>>>>>>> 2d76621cf9d316bb3828509f5d99f6fc398b1ac9
