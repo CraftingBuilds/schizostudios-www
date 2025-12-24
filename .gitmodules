@@ -1,0 +1,4 @@
+[submodule "astrology"]
+[submodule "music/astroenergies-www"]
+	path = music/astroenergies-www
+	url = https://CraftingBuilds@github.com/CraftingBuilds/astroenergies-www
