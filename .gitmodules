@@ -1,3 +1,3 @@
 [submodule "astroenergies-www"]
-	path = astroenergies-www
-	url = git@github.com:CraftingBuilds/astroenergies-www.git
+        path = astroenergies-www
+        url = https://github.com/CraftingBuilds/astroenergies-www.git
