@@ -1,0 +1,39 @@
+# Schizo Studios Publications — block paid file types from direct download
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, nosnippet, noarchive"
+</IfModule>
+
+# Block common paid ebook formats
+<FilesMatch "\.(pdf|epub|mobi|azw3)$">
+  Require all denied
+</FilesMatch>
+
+# Update for fix
+# Turn ON directory listing for /publications
+Options +Indexes
+
+# Make the listing look nicer (optional)
+IndexOptions FancyIndexing HTMLTable NameWidth=* SuppressDescription
+
+# Only show files we want:
+# Hide EVERYTHING by default...
+IndexIgnore *
+
+# ...then allow PDFs + EPUBs by NOT ignoring them:
+# Apache's IndexIgnore is "hide these", so we re-enable by using a trick:
+# We keep IndexIgnore * and then use IndexIgnoreReset if available (Apache 2.4+),
+# otherwise use a whitelist approach via separate folder (see notes below).
+
+# If your Apache supports it (most do on 2.4+):
+IndexIgnoreReset ON
+IndexIgnore *.js *.css *.map *.html *.htm *.bak* *.tmp *.swp .DS_Store Thumbs.db
+
+# Security: block direct access to backup / temp files even if someone guesses the URL
+<FilesMatch "\.(bak|old|backup|swp|tmp)$">
+  Require all denied
+</FilesMatch>
+
+# Optional: block other “source” formats you might sell later
+<FilesMatch "\.(zip|rar|7z)$">
+   Require all denied
+</FilesMatch>

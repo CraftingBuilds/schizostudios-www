@@ -1,0 +1,58 @@
+{
+  "generated_from": "/var/www/schizo-studios/publications",
+  "generated_utc": "2025-12-27T11:31:13.066734+00:00",
+  "count": 4,
+  "paid_exts": [
+    "azw3",
+    "epub",
+    "mobi",
+    "pdf"
+  ],
+  "shop_fallback_url": "https://shop.schizostudios.org/",
+  "items": [
+    {
+      "title": "publications",
+      "relative_path": "js/publications.js",
+      "category": "js",
+      "tags": [],
+      "ext": "js",
+      "size_bytes": 9404,
+      "updated_utc": "2025-12-27T09:05:21.376389+00:00",
+      "visibility": "public",
+      "shop_url": null
+    },
+    {
+      "title": "Comparative Technical Analysis of Exorcism Across Religious Systems",
+      "relative_path": "Comparative Technical Analysis of Exorcism Across Religious Systems .pdf",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "pdf",
+      "size_bytes": 14527332,
+      "updated_utc": "2025-12-27T10:56:25.487985+00:00",
+      "visibility": "paid",
+      "shop_url": "https://shop.schizostudios.org/"
+    },
+    {
+      "title": "Comparative Technical Analysis of Exorcism Across Religious Systems (Book)",
+      "relative_path": "Comparative Technical Analysis of Exorcism Across Religious Systems (Book).epub",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "epub",
+      "size_bytes": 1835024,
+      "updated_utc": "2025-12-27T10:59:22.990160+00:00",
+      "visibility": "paid",
+      "shop_url": "https://shop.schizostudios.org/"
+    },
+    {
+      "title": "index.html.bak",
+      "relative_path": "index.html.bak.2025-12-27-0040",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "2025-12-27-0040",
+      "size_bytes": 3902,
+      "updated_utc": "2025-12-27T08:38:41.224638+00:00",
+      "visibility": "public",
+      "shop_url": null
+    }
+  ]
+}

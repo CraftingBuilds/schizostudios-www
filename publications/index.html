@@ -1,0 +1,279 @@
+]<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Schizo Studios — Publications</title>
+
+  <!-- SITEWIDE NAV CSS -->
+  <link rel="stylesheet" href="/css/nav.css?v=3" />
+
+  <style>
+    :root{
+      --bg:#05070e;
+      --panel:#0b1022;
+      --panel2:#070b18;
+      --text:#e9ecff;
+      --muted:#aab3da;
+      --line:rgba(255,255,255,.10);
+      --brand:#1F3B76; /* Starseed Blue */
+      --accent:#cfd7ff;
+      --good:#6ee7b7;
+      --warn:#fbbf24;
+      --bad:#fb7185;
+
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(31,59,118,.45), transparent 55%),
+                  radial-gradient(1000px 600px at 100% 0%, rgba(31,59,118,.25), transparent 45%),
+                  var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    #nav-placeholder, #footer-placeholder { width:100%; }
+
+    main{
+      width:min(1100px, calc(100% - 2rem));
+      margin: 3.5rem auto 2rem auto;
+      flex:1;
+    }
+
+    .hero{
+      padding: 1.2rem 1.2rem 1rem 1.2rem;
+      background: linear-gradient(180deg, rgba(11,16,34,.90), rgba(7,11,24,.92));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1{
+      margin:.2rem 0 .5rem 0;
+      font-size: clamp(1.6rem, 2.7vw, 2.4rem);
+      letter-spacing:.3px;
+      line-height:1.1;
+    }
+
+    .hero p{
+      margin:.25rem 0 0 0;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .toolbar{
+      margin-top: 1rem;
+      display:grid;
+      grid-template-columns: 1fr auto auto;
+      gap: .75rem;
+      align-items:center;
+    }
+
+    @media (max-width: 860px){
+      .toolbar{grid-template-columns:1fr; }
+    }
+
+    .input, .select, .btn{
+      width:100%;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      padding: .75rem .9rem;
+      outline:none;
+    }
+    .input::placeholder{color: rgba(233,236,255,.45)}
+    .select{cursor:pointer}
+
+    .btn{
+      width:auto;
+      cursor:pointer;
+      background: linear-gradient(180deg, rgba(31,59,118,.85), rgba(31,59,118,.55));
+      border-color: rgba(31,59,118,.95);
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+    .btn:hover{filter: brightness(1.07)}
+    .btn:active{transform: translateY(1px)}
+    .btn.ghost{
+      background: rgba(255,255,255,.04);
+      border-color: var(--line);
+      font-weight:600;
+    }
+
+    .meta{
+      margin-top: .9rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.6rem;
+      color: var(--muted);
+      font-size:.95rem;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      gap:.45rem;
+      align-items:center;
+      padding:.35rem .6rem;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{
+      width:.55rem;height:.55rem;border-radius:50%;
+      background: rgba(31,59,118,.95);
+      box-shadow: 0 0 0 3px rgba(31,59,118,.22);
+    }
+
+    .grid{
+      margin-top: 1.2rem;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .9rem;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 640px){ .grid{grid-template-columns: 1fr;} }
+
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(11,16,34,.85), rgba(7,11,24,.90));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .cardHead{
+      padding: 1rem 1rem .75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .cardHead h2{
+      margin:0;
+      font-size: 1.1rem;
+      letter-spacing:.2px;
+      display:flex;
+      justify-content:space-between;
+      gap:.6rem;
+      align-items:baseline;
+    }
+    .count{
+      color: var(--muted);
+      font-size:.92rem;
+      font-family: var(--mono);
+    }
+
+    .list{
+      padding: .7rem 1rem 1rem 1rem;
+      display:flex;
+      flex-direction:column;
+      gap:.55rem;
+    }
+
+    .item{
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      padding: .65rem .75rem;
+      display:flex;
+      justify-content:space-between;
+      gap:.8rem;
+      align-items:center;
+    }
+
+    .item a{
+      color: var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      word-break: break-word;
+    }
+    .item a:hover{text-decoration:underline}
+
+    .sub{
+      color: var(--muted);
+      font-size:.9rem;
+      margin-top:.15rem;
+      font-family: var(--mono);
+      opacity:.9;
+    }
+
+    .tag{
+      flex:0 0 auto;
+      font-family: var(--mono);
+      font-size:.82rem;
+      padding:.25rem .45rem;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      color: rgba(233,236,255,.80);
+      background: rgba(255,255,255,.02);
+      max-width: 46%;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .status{
+      margin-top: 1rem;
+      border-radius: var(--radius);
+      border: 1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.03);
+      padding: .9rem 1rem;
+      color: var(--muted);
+      line-height:1.45;
+    }
+
+    .mono{font-family:var(--mono)}
+  </style>
+</head>
+
+<body>
+  <!-- Global nav -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <section class="hero">
+      <h1>Publications</h1>
+      <p>
+        The full Schizo Studios publications portfolio — books, PDFs, research, scripts, releases —
+        indexed directly from <span class="mono">/publications</span>.
+      </p>
+
+      <div class="toolbar" role="region" aria-label="Publications controls">
+        <input id="q" class="input" type="search" placeholder="Search titles / paths / tags…" autocomplete="off" />
+        <select id="type" class="select" aria-label="Filter by file type">
+          <option value="">All types</option>
+        </select>
+        <div style="display:flex; gap:.6rem; justify-content:flex-end; flex-wrap:wrap;">
+          <button id="reload" class="btn" type="button">Reload</button>
+          <button id="downloadCatalog" class="btn ghost" type="button">Download catalog JSON</button>
+        </div>
+      </div>
+
+      <div class="meta">
+        <span class="pill"><span class="dot"></span><span id="stats">Loading…</span></span>
+        <span class="pill">Catalog: <span class="mono">/publications/publications.json</span></span>
+        <span class="pill">Base URL: <span class="mono">/publications/</span></span>
+      </div>
+
+      <div id="status" class="status" style="display:none;"></div>
+    </section>
+
+    <section id="out" class="grid" aria-label="Publication categories"></section>
+  </main>
+
+  <!-- Global footer -->
+  <div id="footer-placeholder"></div>
+
+<script src="/publications/js/publications.js?v=6"></script>
+
+</body>
+</html>
