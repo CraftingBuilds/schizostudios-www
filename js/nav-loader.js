@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const mount = document.getElementById("nav-placeholder");
   if (!mount) return;
 
-  const candidates = [
-    "/partials/nav.html",
-    "/includes/nav.html",
-    "/nav.html",
-  ];
+const candidates = [
+  "/components/nav.html",
+  "/partials/nav.html",
+  "/includes/nav.html",
+  "/nav.html",
+];
 
   const log = (...args) => console.log("[nav-loader]", ...args);
   const warn = (...args) => console.warn("[nav-loader]", ...args);
