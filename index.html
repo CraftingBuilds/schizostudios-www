@@ -9,60 +9,136 @@
   <link rel="stylesheet" href="/css/nav.css?v=3">
 
   <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    :root{
+      /* Brand */
+      --brand: #1F3B76; /* Starseed Blue */
+      --bg: #070A10;
+      --text: rgba(255,255,255,0.88);
+      --muted: rgba(255,255,255,0.68);
+      --line: rgba(255,255,255,0.12);
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.04);
+      --radius: 16px;
+
+      /* Layout */
+      --max: 920px;
+      --pad: 1.25rem;
     }
 
-    /* NAV CONTAINER — stays at the top */
+    /* Base */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+
+      /* Easier-on-eyes dark background with subtle brand glow */
+      background:
+        radial-gradient(1100px 700px at 20% -10%, rgba(31,59,118,0.35), transparent 60%),
+        radial-gradient(900px 600px at 100% 10%, rgba(31,59,118,0.18), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), transparent 30%),
+        var(--bg);
+
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* NAV CONTAINER -- stays at the top */
     #nav-placeholder {
       width: 100%;
     }
 
-    /* MAIN CONTENT — normal readable layout */
+    /* Page layout */
     main {
       flex: 1;
-      max-width: 900px;
-      margin: 4rem auto 2rem auto;
-      padding: 0 1rem;
+      max-width: var(--max);
+      width: calc(100% - (var(--pad) * 2));
+      margin: 4.25rem auto 2.5rem auto;
+      padding: 0;
       text-align: left;
-      letter-spacing: 0.5px; /* readable, not stretched */
+      letter-spacing: 0.2px; /* keep it subtle */
     }
 
-    /* Headings */
+    /* Readable content card */
+    .content-card{
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(1.1rem, 2.2vw, 1.75rem);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(31,59,118,0.15) inset;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    /* Heading */
     main h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
+      font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+      font-weight: 760;
+      margin: 0 0 1rem 0;
+      letter-spacing: 0.2px;
+    }
+
+    /* A nice tiny accent line under the title */
+    .title-rule{
+      height: 2px;
+      width: 72px;
+      background: linear-gradient(90deg, rgba(31,59,118,1), rgba(31,59,118,0));
+      border-radius: 999px;
+      margin: 0 0 1.25rem 0;
     }
 
     /* Paragraphs */
     main p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
+      font-size: 1.06rem;
+      margin: 0 0 1rem 0;
+      color: var(--text);
     }
 
+    .muted{
+      color: var(--muted);
+    }
+
+    /* Footer */
     footer {
-      padding: 1.5rem 0;
+      padding: 1.25rem 0 1.75rem 0;
       text-align: center;
-      font-family: sans-serif;
-      color: #aaa;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,0.25);
+    }
+
+    footer .footer-inner{
+      max-width: var(--max);
+      width: calc(100% - (var(--pad) * 2));
+      margin: 0 auto;
     }
 
     footer a {
-      color: #ccc;
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.22);
       margin: 0 0.5rem;
+      padding-bottom: 2px;
     }
 
     footer a:hover {
-      color: #fff;
+      border-bottom-color: rgba(255,255,255,0.55);
+    }
+
+    .fineprint{
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.62);
+    }
+
+    /* Reduce motion for folks who want it */
+    @media (prefers-reduced-motion: reduce){
+      * { scroll-behavior: auto !important; }
     }
   </style>
 </head>
@@ -74,25 +150,33 @@
 
   <!-- PAGE CONTENT -->
   <main>
-    <h1>Schizo Studios Mission Statement</h1>
-    <p>
-      Schizo Studios' mission is to bring individuals' outlook and opinions into the public.
-    </p>
-    <p>
-      It is intended that through self-expression one might gain better insight, all the while
-      sharing their perspective and opinions with others.
-    </p>
+    <section class="content-card">
+      <h1>Schizo Studios Mission Statement</h1>
+      <div class="title-rule"></div>
+
+      <p>
+        Schizo Studios' mission is to bring individuals' outlook and opinions into the public.
+      </p>
+      <p class="muted">
+        It is intended that through self-expression one might gain better insight, all the while
+        sharing their perspective and opinions with others.
+      </p>
+    </section>
   </main>
 
   <!-- SITEWIDE FOOTER -->
   <footer>
-    <div style="margin-bottom: 0.75rem;">
-      <a href="/docs/Privacy_Policy_rev11-2025.pdf">Privacy Policy</a>
-      |
-      <a href="/docs/Terms_of_Service_rev11-2025.pdf">Terms of Service</a>
-    </div>
+    <div class="footer-inner">
+      <div style="margin-bottom: 0.5rem;">
+        <a href="/docs/Privacy_Policy_rev11-2025.pdf">Privacy Policy</a>
+        |
+        <a href="/docs/Terms_of_Service_rev11-2025.pdf">Terms of Service</a>
+      </div>
 
-    © 2025 Mikah Smith &amp; Schizo Studios - All Rights Reserved
+      <div class="fineprint">
+        © 2025 Mikah Smith &amp; Schizo Studios -- All Rights Reserved
+      </div>
+    </div>
   </footer>
 </body>
 </html>
