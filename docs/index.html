@@ -1,1 +1,262 @@
-<html><body><h1>Docs Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schizo Studios -- Docs</title>
+
+  <!-- SITEWIDE NAV CSS -->
+  <link rel="stylesheet" href="/css/nav.css?v=3">
+
+  <style>
+    :root{
+      --bg:#000;
+      --fg:#fff;
+      --muted:rgba(255,255,255,.72);
+      --soft:rgba(255,255,255,.10);
+      --soft2:rgba(255,255,255,.06);
+      --accent:#1F3B76; /* Starseed Blue */
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.5;
+      letter-spacing:.2px;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+    }
+
+    #nav-placeholder{ width:100%; }
+
+    main{
+      flex:1;
+      max-width:980px;
+      margin:4.25rem auto 2.25rem auto;
+      padding:0 1.1rem;
+    }
+
+    header.docs-head{
+      display:flex;
+      flex-direction:column;
+      gap:.6rem;
+      margin-bottom:1.25rem;
+      padding-bottom:1.25rem;
+      border-bottom:1px solid var(--soft);
+    }
+
+    .kicker{
+      font-size:.9rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(2rem,3.4vw,2.6rem);
+      font-weight:800;
+    }
+
+    .sub{
+      margin:0;
+      color:var(--muted);
+      max-width:72ch;
+    }
+
+    .panel{
+      border:1px solid var(--soft);
+      background:linear-gradient(180deg, rgba(31,59,118,.14), rgba(0,0,0,0));
+      border-radius:14px;
+      padding:1rem;
+      margin-top:1.2rem;
+    }
+
+    .doclist{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:.85rem;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .doc{
+      border:1px solid var(--soft);
+      background:rgba(255,255,255,.03);
+      border-radius:12px;
+      padding:.95rem;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+
+    .doc:hover{
+      transform:translateY(-1px);
+      border-color:rgba(31,59,118,.55);
+      background:rgba(31,59,118,.10);
+    }
+
+    .doc-title{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:baseline;
+      gap:.6rem;
+      margin:0 0 .25rem 0;
+      font-size:1.05rem;
+      font-weight:750;
+    }
+
+    .badge{
+      font-size:.78rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.78);
+      border:1px solid var(--soft);
+      padding:.14rem .5rem;
+      border-radius:999px;
+      background:rgba(0,0,0,.28);
+    }
+
+    .meta{
+      margin:0 0 .75rem 0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.55rem;
+      margin-top:.15rem;
+    }
+
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      text-decoration:none;
+      color:var(--fg);
+      border:1px solid var(--soft);
+      background:rgba(0,0,0,.25);
+      padding:.48rem .7rem;
+      border-radius:10px;
+      font-size:.95rem;
+      transition:border-color .12s ease, background .12s ease;
+    }
+
+    a.btn:hover{
+      border-color:rgba(31,59,118,.75);
+      background:rgba(31,59,118,.14);
+    }
+
+    .btn .dot{
+      width:.55rem;
+      height:.55rem;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 3px rgba(31,59,118,.18);
+      display:inline-block;
+    }
+
+    .fineprint{
+      margin-top:1rem;
+      color:rgba(255,255,255,.62);
+      font-size:.92rem;
+      border-top:1px solid var(--soft2);
+      padding-top:1rem;
+    }
+
+    #footer-placeholder{ width:100%; margin-top:2rem; }
+
+    @media (min-width:780px){
+      .doclist{ gap:1rem; }
+      .panel{ padding:1.1rem; }
+      .doc{ padding:1rem 1.1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sitewide Nav -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+    <header class="docs-head">
+      <div class="kicker">Schizo Studios / Docs</div>
+      <h1>Legal & Spirit-Safety Docs</h1>
+      <p class="sub">
+        The "read this before you vibe" shelf: privacy, terms, and the spiritual hold-harmless framework -- clean and accessible.
+      </p>
+    </header>
+
+    <section class="panel" aria-label="Documents">
+      <ul class="doclist">
+
+        <li class="doc">
+          <p class="doc-title">
+            Privacy Policy &amp; Spiritual Hold-Harmless Notice
+            <span class="badge">rev11 -- 2025</span>
+          </p>
+          <p class="meta">
+            Data collection &amp; use, storage/security, sharing limits, user rights, and the spiritual/metaphysical notice + liability boundary.
+          </p>
+          <div class="actions">
+            <a class="btn" href="./Privacy_Policy_rev11-2025.pdf">
+              <span class="dot" aria-hidden="true"></span> PDF
+            </a>
+            <a class="btn" href="./Privacy_Policy_rev11-2025.txt">
+              <span class="dot" aria-hidden="true"></span> TXT
+            </a>
+          </div>
+        </li>
+
+        <li class="doc">
+          <p class="doc-title">
+            Terms of Service
+            <span class="badge">rev11 -- 2025</span>
+            <span class="badge">Spokane, WA</span>
+          </p>
+          <p class="meta">
+            Acceptable use, metaphysical content disclaimer, IP ownership, user submissions, indemnification, limitation of liability, and venue.
+          </p>
+          <div class="actions">
+            <a class="btn" href="./Terms_of_Service_rev11-2025.pdf">
+              <span class="dot" aria-hidden="true"></span> PDF
+            </a>
+            <a class="btn" href="./Terms_of_Service_rev11-2025.txt">
+              <span class="dot" aria-hidden="true"></span> TXT
+            </a>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="fineprint">
+        If you publish revised versions later, keep this page slim by using the same filenames and archiving old versions elsewhere --
+        or add a small "Archive" section with dated links.
+      </div>
+    </section>
+  </main>
+
+  <!-- Sitewide Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Sitewide Nav
+    fetch("/nav.html")
+      .then(r => r.text())
+      .then(html => (document.getElementById("nav-placeholder").innerHTML = html))
+      .catch(() => {});
+
+    // Sitewide Footer
+    fetch("/footer.html")
+      .then(r => r.text())
+      .then(html => (document.getElementById("footer-placeholder").innerHTML = html))
+      .catch(() => {});
+  </script>
+</body>
+</html>
