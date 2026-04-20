@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEA Archive | Schizo Studios</title>
+
+  <!-- SITEWIDE NAV CSS -->
+  <link rel="stylesheet" href="/css/nav.css?v=3">
+
+  <style>
+    :root{
+      --brand: #1F3B76; /* Starseed Blue */
+      --bg: #070A10;
+      --text: rgba(255,255,255,0.88);
+      --muted: rgba(255,255,255,0.68);
+      --line: rgba(255,255,255,0.12);
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.04);
+      --radius: 16px;
+      --max: 920px;
+      --pad: 1.25rem;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background:
+        radial-gradient(1100px 700px at 20% -10%, rgba(31,59,118,0.35), transparent 60%),
+        radial-gradient(900px 600px at 100% 10%, rgba(31,59,118,0.18), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    #nav-placeholder,
+    #footer-placeholder {
+      width: 100%;
+    }
+
+    main {
+      flex: 1;
+      max-width: var(--max);
+      width: calc(100% - (var(--pad) * 2));
+      margin: 4.25rem auto 2.5rem auto;
+      padding: 0;
+      text-align: left;
+      letter-spacing: 0.2px;
+    }
+
+    .content-card{
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(1.1rem, 2.2vw, 1.75rem);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(31,59,118,0.15) inset;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+      font-weight: 760;
+      margin: 0 0 1rem 0;
+      letter-spacing: 0.2px;
+    }
+
+    .title-rule{
+      height: 2px;
+      width: 72px;
+      background: linear-gradient(90deg, rgba(31,59,118,1), rgba(31,59,118,0));
+      border-radius: 999px;
+      margin: 0 0 1.25rem 0;
+    }
+
+    .intro {
+      font-size: 1.06rem;
+      margin: 0 0 1.4rem 0;
+      color: var(--text);
+    }
+
+    .sea-controls {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .sea-controls input,
+    .sea-controls select {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.85rem 0.9rem;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+
+    .sea-results-meta {
+      margin-bottom: 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .sea-records {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .sea-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .sea-card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
+    .sea-card h2 {
+      margin: 0;
+      font-size: 1.12rem;
+    }
+
+    .sea-date {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .sea-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .sea-tag {
+      background: rgba(31,59,118,0.22);
+      color: rgba(255,255,255,0.9);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      padding: 0.28rem 0.65rem;
+      font-size: 0.8rem;
+    }
+
+    .sea-meta {
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .sea-links {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .sea-links a {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.22);
+      padding-bottom: 2px;
+    }
+
+    .sea-links a:hover {
+      border-bottom-color: rgba(255,255,255,0.55);
+    }
+
+    @media (max-width: 800px) {
+      .sea-controls {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- SITEWIDE NAV -->
+  <div id="nav-placeholder"></div>
+  <script src="/js/nav-loader.js?v=5" defer></script>
+
+  <!-- PAGE CONTENT -->
+  <main>
+    <section class="content-card">
+      <h1>SEA Sound Output &amp; Log Archive</h1>
+      <div class="title-rule"></div>
+
+      <p class="intro">
+        A searchable archive of SEA sound outputs and logs, ordered from oldest to newest.
+      </p>
+
+      <section class="sea-controls">
+        <input type="text" id="searchInput" placeholder="Search title, type, source object, notes, harmonics..." />
+        <select id="yearFilter">
+          <option value="">All Years</option>
+        </select>
+        <select id="typeFilter">
+          <option value="">All Types</option>
+        </select>
+        <select id="modeFilter">
+          <option value="">All Modes</option>
+        </select>
+      </section>
+
+      <section class="sea-results-meta">
+        <span id="resultCount">Loading archive...</span>
+      </section>
+
+      <section id="seaRecords" class="sea-records"></section>
+    </section>
+  </main>
+
+  <!-- SITEWIDE FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch('/components/footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Footer load failed:', error);
+      });
+  </script>
+
+  <script src="/sea/js/sea.js?v=1"></script>
+</body>
+</html>
