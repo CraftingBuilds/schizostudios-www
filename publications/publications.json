@@ -1,4 +1,14 @@
 {
+  "generated_from": "/var/www/schizo-studios/publications",
+  "generated_utc": "2026-04-26T04:08:49.166966+00:00",
+  "count": 15,
+  "paid_exts": [
+    "azw3",
+    "epub",
+    "mobi",
+    "pdf"
+  ],
+  "shop_fallback_url": "https://shop.schizostudios.org/",
   "items": [
     {
       "title": "Astrology Arith(m)etic (Book)",
@@ -7,9 +17,20 @@
       "tags": [],
       "ext": "epub",
       "size_bytes": 9857801,
-      "updated_utc": "2026-01-13T03:17:43.777786Z",
+      "updated_utc": "2026-01-13T03:17:43.777786+00:00",
       "visibility": "paid",
-      "shop_url": "https://shop.schizostudios.org/products/bin"
+      "shop_url": "https://shop.schizostudios.org/"
+    },
+    {
+      "title": "new publication",
+      "relative_path": "bin/new_publication",
+      "category": "bin",
+      "tags": [],
+      "ext": "",
+      "size_bytes": 512,
+      "updated_utc": "2025-12-27T13:54:44.233450+00:00",
+      "visibility": "public",
+      "shop_url": null
     },
     {
       "title": "Academic Reports on Yogic Mudras and Mudras",
@@ -18,9 +39,9 @@
       "tags": [],
       "ext": "pdf",
       "size_bytes": 646938,
-      "updated_utc": "2025-12-27T12:58:53.145368Z",
+      "updated_utc": "2026-04-20T11:55:53.139728+00:00",
       "visibility": "paid",
-      "shop_url": "https://shop.schizostudios.org/products/books-academic-reports-on-yogic-mudras-and-mudras"
+      "shop_url": "https://shop.schizostudios.org/"
     },
     {
       "title": "Academic Reports on Yogic Mudras and Mudras (Book)",
@@ -29,20 +50,31 @@
       "tags": [],
       "ext": "epub",
       "size_bytes": 262593,
-      "updated_utc": "2025-12-27T12:58:51.223148Z",
+      "updated_utc": "2025-12-27T12:58:51.223148+00:00",
       "visibility": "paid",
-      "shop_url": "https://shop.schizostudios.org/products/books-academic-reports-on-yogic-mudras-and-mudras"
+      "shop_url": "https://shop.schizostudios.org/"
     },
     {
-      "title": "Comparative Technical Analysis of Exorcism Across Religious Systems",
-      "relative_path": "books-comparative-technical-analysis-of-exorcism-across-religous-systems/Comparative Technical Analysis of Exorcism Across Religious Systems.pdf",
-      "category": "books-comparative-technical-analysis-of-exorcism-across-religous-systems",
+      "title": "test trigger",
+      "relative_path": "books-academic-reports-on-yogic-mudras-and-mudras/test-trigger.txt",
+      "category": "books-academic-reports-on-yogic-mudras-and-mudras",
       "tags": [],
-      "ext": "pdf",
-      "size_bytes": 14527332,
-      "updated_utc": "2025-12-27T10:56:25.487985Z",
-      "visibility": "paid",
-      "shop_url": "https://shop.schizostudios.org/products/books-comparative-technical-analysis-of-exorcism-across-religous-systems"
+      "ext": "txt",
+      "size_bytes": 0,
+      "updated_utc": "2025-12-27T13:33:15.625587+00:00",
+      "visibility": "public",
+      "shop_url": null
+    },
+    {
+      "title": "trigger",
+      "relative_path": "books-academic-reports-on-yogic-mudras-and-mudras/_trigger.txt",
+      "category": "books-academic-reports-on-yogic-mudras-and-mudras",
+      "tags": [],
+      "ext": "txt",
+      "size_bytes": 0,
+      "updated_utc": "2025-12-27T13:40:14.874928+00:00",
+      "visibility": "public",
+      "shop_url": null
     },
     {
       "title": "Comparative Technical Analysis of Exorcism Across Religious Systems",
@@ -51,10 +83,97 @@
       "tags": [],
       "ext": "epub",
       "size_bytes": 1835024,
-      "updated_utc": "2025-12-27T10:59:22.990160Z",
+      "updated_utc": "2025-12-27T10:59:22.990160+00:00",
       "visibility": "paid",
-      "shop_url": "https://shop.schizostudios.org/products/books-comparative-technical-analysis-of-exorcism-across-religous-systems"
+      "shop_url": "https://shop.schizostudios.org/"
+    },
+    {
+      "title": "Comparative Technical Analysis of Exorcism Across Religious Systems",
+      "relative_path": "books-comparative-technical-analysis-of-exorcism-across-religous-systems/Comparative Technical Analysis of Exorcism Across Religious Systems.pdf",
+      "category": "books-comparative-technical-analysis-of-exorcism-across-religous-systems",
+      "tags": [],
+      "ext": "pdf",
+      "size_bytes": 14527332,
+      "updated_utc": "2026-04-20T11:55:53.139753+00:00",
+      "visibility": "paid",
+      "shop_url": "https://shop.schizostudios.org/"
+    },
+    {
+      "title": "publications",
+      "relative_path": "js/publications.js",
+      "category": "js",
+      "tags": [],
+      "ext": "js",
+      "size_bytes": 11598,
+      "updated_utc": "2025-12-27T12:31:07.476081+00:00",
+      "visibility": "public",
+      "shop_url": null
+    },
+    {
+      "title": "Natal Chart Analysis Kimberly Ingram",
+      "relative_path": "Natal Chart Analysis - Kimberly Ingram.pdf",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "pdf",
+      "size_bytes": 5717845,
+      "updated_utc": "2026-04-26T04:08:20.397182+00:00",
+      "visibility": "paid",
+      "shop_url": "https://shop.schizostudios.org/"
+    },
+    {
+      "title": "index.html.bak",
+      "relative_path": "index.html.bak.2025-12-27-0040",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "2025-12-27-0040",
+      "size_bytes": 3902,
+      "updated_utc": "2025-12-27T08:38:41.224638+00:00",
+      "visibility": "public",
+      "shop_url": null
+    },
+    {
+      "title": "publications.json",
+      "relative_path": "publications.json.tmp",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "tmp",
+      "size_bytes": 2790,
+      "updated_utc": "2026-02-21T08:21:49.118511+00:00",
+      "visibility": "public",
+      "shop_url": null
+    },
+    {
+      "title": "publications.json.bak",
+      "relative_path": "publications.json.bak.2025-12-27-0351",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "2025-12-27-0351",
+      "size_bytes": 1760,
+      "updated_utc": "2025-12-27T11:51:07.877153+00:00",
+      "visibility": "public",
+      "shop_url": null
+    },
+    {
+      "title": "shop map",
+      "relative_path": "shop-map.json",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "json",
+      "size_bytes": 925,
+      "updated_utc": "2025-12-27T13:25:52.101333+00:00",
+      "visibility": "public",
+      "shop_url": null
+    },
+    {
+      "title": "shop map.json.bak",
+      "relative_path": "shop-map.json.bak.2025-12-27-0437",
+      "category": "Unsorted",
+      "tags": [],
+      "ext": "2025-12-27-0437",
+      "size_bytes": 396,
+      "updated_utc": "2025-12-27T12:16:52.482591+00:00",
+      "visibility": "public",
+      "shop_url": null
     }
-  ],
-  "generated_at": "2026-02-21T08:17:03.107587Z"
+  ]
 }
