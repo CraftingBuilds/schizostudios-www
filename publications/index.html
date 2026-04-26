@@ -73,7 +73,7 @@
     .toolbar{
       margin-top: 1rem;
       display:grid;
-      grid-template-columns: 1fr auto auto;
+      grid-template-columns: 1fr auto auto auto;
       gap: .75rem;
       align-items:center;
     }
@@ -251,6 +251,9 @@
         <input id="q" class="input" type="search" placeholder="Search titles / paths / tags…" autocomplete="off" />
         <select id="type" class="select" aria-label="Filter by file type">
           <option value="">All types</option>
+        </select>
+        <select id="category" class="select" aria-label="Filter by category">
+          <option value="">All categories</option>
         </select>
         <div style="display:flex; gap:.6rem; justify-content:flex-end; flex-wrap:wrap;">
           <button id="reload" class="btn" type="button">Reload</button>

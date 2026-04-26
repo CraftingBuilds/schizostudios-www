@@ -15,6 +15,7 @@
 
   const elQ = document.getElementById("q");
   const elType = document.getElementById("type");
+  const elCategory = document.getElementById("category");
   const elOut = document.getElementById("out");
   const elStats = document.getElementById("stats");
   const elStatus = document.getElementById("status");
@@ -106,10 +107,12 @@
 
     const q = norm(elQ?.value).trim();
     const t = norm(elType?.value).trim();
+    const c = norm(elCategory?.value).trim();
 
     // type filter matches available formats later (handled after grouping),
     // but we keep this to reduce work early
     if (t && norm(it.ext) !== t) return false;
+    if (c && norm(it.category) !== c) return false;
 
     if (!q) return true;
 
@@ -132,9 +135,9 @@
     const map = new Map();
 
     for (const it of items) {
-      const paidKey = (it.visibility === "paid" && it.shop_url) ? `PAID::${it.shop_url}` : null;
-      const titleKey = `TITLE::${canonicalBookTitle(it)}`;
-      const key = paidKey || titleKey;
+      const titleKey = canonicalBookTitle(it);
+      const catKey = it.category || (it.relative_path.split("/")[0] || "Unsorted");
+      const key = `BOOK::${catKey}::${titleKey}`;
 
       if (!map.has(key)) {
         map.set(key, {
@@ -184,6 +187,17 @@
     elType.innerHTML =
       `<option value="">All types</option>` +
       types.map((t) => `<option value="${escapeHtml(t)}">${escapeHtml(t.toUpperCase())}</option>`).join("");
+  }
+
+  function buildCategoryOptionsFromBooks(books) {
+    if (!elCategory) return;
+    const categories = uniq(
+      books.map((b) => b.category || "Unsorted")
+    ).filter(Boolean);
+
+    elCategory.innerHTML =
+      `<option value="">All categories</option>` +
+      categories.map((c) => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("");
   }
 
   function groupBooksByCategory(books) {
@@ -323,6 +337,7 @@
       // Build types from BOOKS (not raw items), so it stays clean
       const books = groupItemsToBooks(catalog.items);
       buildTypeOptionsFromBooks(books);
+      buildCategoryOptionsFromBooks(books);
 
       render();
     } catch (err) {
@@ -339,6 +354,7 @@
   function wireEvents() {
     elQ?.addEventListener("input", render);
     elType?.addEventListener("change", render);
+    elCategory?.addEventListener("change", render);
     btnReload?.addEventListener("click", loadCatalog);
     btnDownloadCatalog?.addEventListener("click", downloadCatalog);
   }
