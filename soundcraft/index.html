@@ -1,1 +1,566 @@
-<html><body><h1>More to come...</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SoundCraft | Schizo Studios</title>
+
+  <meta
+    name="description"
+    content="SoundCraft -- metaphysical soundwork, ritual resonance, sacred frequencies, and immersive audio experiences from Schizo Studios."
+  />
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <style>
+    :root {
+      --gilded-bronze: #C49F5D;
+      --cosmic-indigo: #1E1F3D;
+      --solar-gold: #F5DEB3;
+      --deep-nebula: #4E3B6E;
+      --burnished-ochre: #8C6D45;
+
+      --text-main: #F5DEB3;
+      --text-soft: rgba(245, 222, 179, 0.78);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        radial-gradient(circle at top,
+          rgba(78, 59, 110, 0.35),
+          transparent 28%),
+        radial-gradient(circle at center,
+          rgba(245, 222, 179, 0.08),
+          transparent 24%),
+        linear-gradient(
+          180deg,
+          #1E1F3D 0%,
+          #17182f 50%,
+          #10111f 100%
+        );
+
+      color: var(--text-main);
+    }
+
+    a {
+      color: var(--solar-gold);
+      text-decoration: none;
+    }
+
+    /* =========================
+       NAV FIXES
+    ========================== */
+
+    #nav-placeholder ul,
+    #nav-placeholder li,
+    #nav-placeholder .nav-menu,
+    #nav-placeholder .dropdown-menu {
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #nav-placeholder li::marker {
+      content: "" !important;
+    }
+
+    /* Mobile nav hidden until toggled */
+    @media (max-width: 768px) {
+
+      #nav-placeholder .nav-menu {
+        display: none !important;
+      }
+
+      #nav-placeholder .nav-menu.active,
+      #nav-placeholder .nav-menu.show,
+      #nav-placeholder .navbar.active .nav-menu,
+      #nav-placeholder nav.active .nav-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        padding: 1rem !important;
+      }
+
+      #nav-placeholder .dropdown-menu {
+        display: none !important;
+      }
+
+      #nav-placeholder .dropdown.active .dropdown-menu,
+      #nav-placeholder .dropdown.open .dropdown-menu,
+      #nav-placeholder .dropdown:hover .dropdown-menu {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem 4rem;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        url("/soundcraft/soundcraftSeal.jpeg")
+        center center / 500px no-repeat;
+
+      opacity: 0.14;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(245, 222, 179, 0.08),
+          transparent 20%
+        ),
+        radial-gradient(
+          circle at center,
+          transparent 15%,
+          rgba(30, 31, 61, 0.82) 65%
+        );
+
+      z-index: -1;
+    }
+
+    .hero-panel {
+      width: min(980px, 100%);
+      padding: clamp(2rem, 5vw, 4rem);
+
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(30, 31, 61, 0.88),
+          rgba(78, 59, 110, 0.30)
+        );
+
+      border: 1px solid rgba(196, 159, 93, 0.22);
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(196, 159, 93, 0.08);
+
+      backdrop-filter: blur(10px);
+
+      text-align: center;
+    }
+
+    .seal {
+      width: min(260px, 70vw);
+      margin-bottom: 2rem;
+
+      border-radius: 50%;
+
+      filter:
+        drop-shadow(0 0 18px rgba(196,159,93,0.32))
+        drop-shadow(0 0 30px rgba(245,222,179,0.12));
+    }
+
+    h1 {
+      margin: 0;
+
+      font-size: clamp(3rem, 9vw, 6.5rem);
+
+      line-height: 0.95;
+      letter-spacing: 0.10em;
+
+      text-transform: uppercase;
+
+      color: var(--gilded-bronze);
+
+      text-shadow:
+        0 0 16px rgba(196, 159, 93, 0.18);
+    }
+
+    .subtitle {
+      max-width: 760px;
+
+      margin: 1.5rem auto 0;
+
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+
+      line-height: 1.7;
+
+      color: var(--solar-gold);
+    }
+
+    .intro {
+      max-width: 760px;
+
+      margin: 1.5rem auto 0;
+
+      color: var(--text-soft);
+
+      line-height: 1.9;
+
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       CONTENT
+    ========================== */
+
+    .content-section {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 1rem;
+
+      color: var(--gilded-bronze);
+
+      font-size: clamp(2rem, 5vw, 3rem);
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-heading p {
+      margin: 0;
+
+      color: var(--text-soft);
+
+      line-height: 1.85;
+    }
+
+    .craft-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 1.5rem;
+    }
+
+    .craft-card {
+      padding: 1.8rem;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          160deg,
+          rgba(78, 59, 110, 0.36),
+          rgba(30, 31, 61, 0.82)
+        );
+
+      border: 1px solid rgba(196, 159, 93, 0.18);
+
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .craft-card h3 {
+      margin-top: 0;
+
+      color: var(--solar-gold);
+    }
+
+    .craft-card p {
+      color: var(--text-soft);
+
+      line-height: 1.8;
+    }
+
+    /* =========================
+       TRANSMISSION
+    ========================== */
+
+    .transmission {
+      padding: 5rem 1.5rem;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(140, 109, 69, 0.15),
+          transparent
+        );
+    }
+
+    .transmission blockquote {
+      max-width: 920px;
+
+      margin: 0 auto;
+
+      color: var(--solar-gold);
+
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+
+      line-height: 1.8;
+
+      font-style: italic;
+    }
+
+    /* =========================
+       PURPOSE
+    ========================== */
+
+    .mission {
+      max-width: 860px;
+
+      margin: 0 auto;
+
+      text-align: center;
+
+      color: var(--text-soft);
+
+      line-height: 1.9;
+
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       FOOTER FALLBACK
+    ========================== */
+
+    .fallback-footer {
+      padding: 2rem 1rem;
+
+      text-align: center;
+
+      color: var(--solar-gold);
+
+      background: rgba(0,0,0,0.25);
+
+      border-top: 1px solid rgba(196,159,93,0.15);
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 768px) {
+
+      .hero {
+        min-height: auto;
+        padding-top: 4rem;
+      }
+
+      .hero-panel {
+        border-radius: 24px;
+      }
+
+      h1 {
+        letter-spacing: 0.06em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SITE NAV -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-panel">
+
+        <img
+          src="/soundcraft/soundcraftSeal.jpeg"
+          alt="SoundCraft Seal"
+          class="seal"
+        />
+
+        <h1>SoundCraft</h1>
+
+        <p class="subtitle">
+          Metaphysical soundwork, ritual resonance,
+          sacred frequencies, and immersive audio architecture.
+        </p>
+
+        <p class="intro">
+          SoundCraft is the sonic division of Schizo Studios --
+          a convergence of rhythm, atmosphere, harmonic structure,
+          emotional transmission, and spiritual intention.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- WORK -->
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>The Work</h2>
+
+        <p>
+          SoundCraft approaches audio as more than entertainment.
+          Sound becomes atmosphere. Rhythm becomes movement.
+          Frequency becomes imprint.
+        </p>
+      </div>
+
+      <div class="craft-grid">
+
+        <article class="craft-card">
+          <h3>Sacred Frequencies</h3>
+
+          <p>
+            Harmonic structures shaped through resonance,
+            interval relationships, and intentional sonic design.
+          </p>
+        </article>
+
+        <article class="craft-card">
+          <h3>SoundScapes</h3>
+
+          <p>
+            Immersive environments for meditation,
+            journeywork, grounding, healing, and reflection.
+          </p>
+        </article>
+
+        <article class="craft-card">
+          <h3>Rhythmic Command</h3>
+
+          <p>
+            Cadence-driven composition inspired by ritual pacing,
+            movement, and Lead Snare Call traditions.
+          </p>
+        </article>
+
+        <article class="craft-card">
+          <h3>Celestial Mapping</h3>
+
+          <p>
+            Astronomical cycles and symbolic timing integrated into
+            compositional structure and energetic atmosphere.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- TRANSMISSION -->
+    <section class="transmission">
+
+      <blockquote>
+        "Every sound leaves an imprint.
+        Every rhythm alters motion.
+        Every resonance shapes atmosphere."
+      </blockquote>
+
+    </section>
+
+    <!-- PURPOSE -->
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>Purpose</h2>
+      </div>
+
+      <div class="mission">
+
+        <p>
+          SoundCraft exists to create immersive sonic works that
+          carry emotional, spiritual, symbolic, and atmospheric weight.
+        </p>
+
+        <p>
+          These works are designed to be experienced --
+          not merely heard.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="/js/nav-loader.js"></script>
+
+  <script>
+    async function loadFooter() {
+
+      const target =
+        document.getElementById("footer-placeholder");
+
+      if (!target) return;
+
+      const footerPaths = [
+        "/components/footer.html",
+        "/partials/footer.html",
+        "/includes/footer.html",
+        "/footer.html"
+      ];
+
+      for (const path of footerPaths) {
+
+        try {
+
+          const response = await fetch(path);
+
+          if (!response.ok) continue;
+
+          const html = await response.text();
+
+          target.innerHTML = html;
+
+          return;
+
+        } catch (err) {
+          console.warn("Footer failed:", path);
+        }
+      }
+
+      target.innerHTML = `
+        <footer class="fallback-footer">
+          © 2026 Schizo Studios -- All Rights Reserved
+        </footer>
+      `;
+    }
+
+    loadFooter();
+  </script>
+
+</body>
+</html>
