@@ -1,7 +1,7 @@
 {
   "generated_from": "/var/www/schizo-studios/publications",
   "generated_utc": "2026-04-26T04:08:49.166966+00:00",
-  "count": 15,
+  "count": 10,
   "paid_exts": [
     "azw3",
     "epub",
@@ -119,61 +119,6 @@
       "updated_utc": "2026-04-26T04:08:20.397182+00:00",
       "visibility": "paid",
       "shop_url": "https://shop.schizostudios.org/"
-    },
-    {
-      "title": "index.html.bak",
-      "relative_path": "index.html.bak.2025-12-27-0040",
-      "category": "Unsorted",
-      "tags": [],
-      "ext": "2025-12-27-0040",
-      "size_bytes": 3902,
-      "updated_utc": "2025-12-27T08:38:41.224638+00:00",
-      "visibility": "public",
-      "shop_url": null
-    },
-    {
-      "title": "publications.json",
-      "relative_path": "publications.json.tmp",
-      "category": "Unsorted",
-      "tags": [],
-      "ext": "tmp",
-      "size_bytes": 2790,
-      "updated_utc": "2026-02-21T08:21:49.118511+00:00",
-      "visibility": "public",
-      "shop_url": null
-    },
-    {
-      "title": "publications.json.bak",
-      "relative_path": "publications.json.bak.2025-12-27-0351",
-      "category": "Unsorted",
-      "tags": [],
-      "ext": "2025-12-27-0351",
-      "size_bytes": 1760,
-      "updated_utc": "2025-12-27T11:51:07.877153+00:00",
-      "visibility": "public",
-      "shop_url": null
-    },
-    {
-      "title": "shop map",
-      "relative_path": "shop-map.json",
-      "category": "Unsorted",
-      "tags": [],
-      "ext": "json",
-      "size_bytes": 925,
-      "updated_utc": "2025-12-27T13:25:52.101333+00:00",
-      "visibility": "public",
-      "shop_url": null
-    },
-    {
-      "title": "shop map.json.bak",
-      "relative_path": "shop-map.json.bak.2025-12-27-0437",
-      "category": "Unsorted",
-      "tags": [],
-      "ext": "2025-12-27-0437",
-      "size_bytes": 396,
-      "updated_utc": "2025-12-27T12:16:52.482591+00:00",
-      "visibility": "public",
-      "shop_url": null
     }
   ]
 }
