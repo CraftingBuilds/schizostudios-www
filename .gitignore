@@ -2,3 +2,8 @@
 music/astroenergies/audio/
 publications/publications.json.tmp
 sea/data/
+
+# Local development artifacts
+node_modules/
+__pycache__/
+*.py[cod]
