@@ -103,6 +103,44 @@
       color: var(--muted);
     }
 
+
+
+    /* Studio announcement */
+    .studio-announcement{
+      margin-top: 1rem;
+      border-color: rgba(31,59,118,0.42);
+      background:
+        linear-gradient(180deg, rgba(31,59,118,0.18), rgba(255,255,255,0.04)),
+        var(--panel2);
+    }
+
+    .eyebrow{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.75rem;
+      padding: 0.22rem 0.65rem;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      color: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.06);
+      font-size: 0.9rem;
+      letter-spacing: 0.25px;
+    }
+
+    .studio-announcement h2{
+      font-size: clamp(1.45rem, 2.6vw, 2rem);
+      line-height: 1.2;
+      margin: 0 0 0.85rem 0;
+      letter-spacing: 0.2px;
+    }
+
+    .studio-note{
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
     /* Footer */
     footer {
       padding: 1.25rem 0 1.75rem 0;
@@ -160,6 +198,23 @@
       <p class="muted">
         It is intended that through self-expression one might gain better insight, all the while
         sharing their perspective and opinions with others.
+      </p>
+    </section>
+
+    <section class="content-card studio-announcement" aria-labelledby="studio-app-title">
+      <div class="eyebrow">In development</div>
+      <h2 id="studio-app-title">Introducing <em>Studio</em> by Schizo Studios</h2>
+
+      <p>
+        <em>Studio</em> is an app currently being built for Schizo Studios as a creator-centered home
+        for shows, proposals, verification, onboarding, and public-facing project pages.
+      </p>
+      <p class="muted">
+        It is not available for release yet, but the foundation is in motion. Keep your ears open
+        and your eyes on Schizo Studios for future updates as <em>Studio</em> takes shape.
+      </p>
+      <p class="studio-note">
+        More details will be shared as the app moves through planning, design, and release preparation.
       </p>
     </section>
   </main>
